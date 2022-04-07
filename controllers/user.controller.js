@@ -3,6 +3,7 @@ var UserModel=require('../models/user.model');
 exports.register=(req,res)=>{
     var body=req.body;
     var userDocument=new UserModel(body);
+   
     userDocument.save((err,docs)=>{
         if(err){
             console.log(err.message);

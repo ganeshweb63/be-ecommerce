@@ -3,17 +3,17 @@ var mongoose=require('mongoose');
 var Schema=mongoose.Schema;
 var userSchema=new Schema({
     username:{
-        type:String,
-        required:true,
+        type:String
+        
     },
     password:{
-        type:String,
-        required:true
+        type:String
+        
     },
     emailId:{
-        type:String,
-        required:true,
+        type:String
+        
     }
 })
 
-module.exports=mongoose.model('user',userSchema);
+module.exports=mongoose.model('customer',userSchema);
