@@ -5,7 +5,9 @@ var cors=require('cors');
 
 env.config();
 var dbServer=require('./services/db.service');
-var userRouter=require('./routes/user.route')
+var userRouter=require('./routes/user.route');
+var productRouter=require('./routes/product.route');
+
 
 
 dbServer.connectToDB(process.env.MONGO_URL);
@@ -15,6 +17,8 @@ var app=express();
 app.use(cors())
 app.use(express.json());
 app.use(userRouter);
+app.use(productRouter);
+
 
 
 
