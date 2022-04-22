@@ -86,13 +86,31 @@ exports.updateProduct=(req,res)=>{
     })
 }
 
-exports.InProduct=(req,res)=>{
-    ProductModel.find({productId:productId},(err,doc)=>{
+// exports.productDetails=(req,res)=>{
+//     var productId=req.query.productId;
+
+//     ProductModel.find({'_id':{$in:productId}})  //{'_id':{$in:productId}}
+//     .populate('writer')
+//     .exec((err,product)=>{
+//        if(err){
+//            res.status(400).send(err);
+//        }
+//        if(product){
+//            res.send("product",product)
+//        }
+//     })
+// }
+
+
+exports.productDetails=(req,res)=>{
+    var id=req.params.productId;
+  // var productId=JSON.parse(localStorage.getItem('productId'))
+    ProductModel.find({productId:id},(err,doc)=>{
         if(err){
-            res.send(err)
+            res.status(400).send(err);
         }
         if(doc){
-            res.send("doc",doc)
+            res.send(doc);
         }
     })
 }
