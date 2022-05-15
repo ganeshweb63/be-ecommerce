@@ -22,7 +22,7 @@ exports.addProduct=(req,res)=>{
 exports.productList=(req,res)=>{
     ProductModel.find({},(err,docs)=>{
         if(err){
-            res.send(err.message)
+            res.send(err)
         }
         if(docs){
              res.send(docs);

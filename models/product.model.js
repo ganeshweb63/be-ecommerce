@@ -1,4 +1,4 @@
-var mongoose=require('mongoose');
+var mongoose=require('mongoose')
 var Schema =mongoose.Schema;
 var ProductSchema=new Schema({
     productId:{
@@ -51,4 +51,4 @@ var ProductSchema=new Schema({
    
 })
 
-module.exports=mongoose.model('product',ProductSchema)
+module.exports=mongoose.model('product',ProductSchema);
